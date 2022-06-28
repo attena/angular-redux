@@ -1,0 +1,10 @@
+<li [class.completed]="tarea.completado"
+    [class.editing]="editar">
+    <div class="view">
+        <input class="toggle" type="checkbox" [formControl]="chkCompletado">
+        <label (dblclick)="ActivedEdit()">{{tarea.text}}</label>
+        <button class="destroy" (click)="removeElement()"></button>
+    </div>
+    <input class="edit" 
+    [formControl]="txtInput" (blur)="saveEdit()" type="text" #inputEdit>
+</li>

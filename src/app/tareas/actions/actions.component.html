@@ -1,0 +1,12 @@
+<footer class="footer">
+    <!-- This should be `0 items left` by default -->
+    <span class="todo-count"><strong>{{countTareas}}</strong> Tareas</span>
+    <!-- Remove this if you don't implement routing -->
+    <ul class="filters" >
+        <li *ngFor="let item of filterList">
+            <a [class.selected]="item === filter" (click)="changeFilter(item)">{{item}}</a>
+        </li>
+    </ul>
+    <!-- Hidden if no completed items are left ↓ -->
+    <button class="clear-completed" (click)="removeCompleted()" >Borrar completados</button>
+</footer>
